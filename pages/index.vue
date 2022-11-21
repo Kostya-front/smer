@@ -4,11 +4,11 @@
       <div class="logo">SMER</div>
     </nav>
     <div class="main">
-      <button @click="()=>--index" type="button" class="btn btn-primary" data-bs-toggle="button">Prev</button>
+      <button @click="prevSlide" type="button" class="btn btn-primary" data-bs-toggle="button">Prev</button>
       <BlockOne v-if="index === 0"/>
       <BlockTwo v-if="index === 1" />
       <BlockThree v-if="index === 2" />
-      <button @click="()=>++index" type="button" class="btn btn-primary" data-bs-toggle="button">Next</button>
+      <button @click="nextSlide" type="button" class="btn btn-primary" data-bs-toggle="button">Next</button>
     </div>
   </div>
 </template>
@@ -37,6 +37,16 @@ export default {
   methods:{
     setValueTextField(value){
       this.$store.dispatch('items/setValueTextField', value)
+    },
+    prevSlide(value) {
+      if(this.index >= 1 ){
+        --this.index
+      }
+    },
+    nextSlide(value) {
+      if(this.index <=1 ){
+        ++this.index
+      }
     }
   },
   beforeMount() {

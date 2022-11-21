@@ -11,12 +11,6 @@
           aria-label="With textarea"></textarea>
       </div>
     </div>
-    <div class="questions">
-      <div v-for="question of questions" class="question">
-        <h3> {{ question.title}}</h3>
-        <textarea />
-      </div>
-    </div>
   </div>
 </template>
 
